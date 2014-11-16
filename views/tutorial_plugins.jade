@@ -1,0 +1,120 @@
+extends layout
+
+block content
+    div(class="jumbotron")
+        div(class="container")
+            h2
+                | Social Plugins
+            p
+                | Easy to use of the shelf. Learn more about them 
+                a(href="https://developers.facebook.com/docs/plugins", target="_blank")
+                    | here.
+     div(class="")
+        div(class="well")
+            h2 
+                | Like Button
+            p
+                | Let people share pages and content from your site back to their Facebook profile with one click, so all their friends can read them.
+            pre 
+                | &lt;fb:like href="https://szeged-tech-tutorial.herokuapp.com/" layout="standard" action="like" show_faces="true" share="true"&gt;&lt;/fb:like&gt;
+                
+            <fb:like href="https://szeged-tech-tutorial.herokuapp.com/" layout="standard" action="like" show_faces="true" share="true"></fb:like>
+            
+     div(class="")
+        div(class="well")
+            h2 
+                | Share Button
+            p
+                | Allow people to share to Facebook, share with particular friends or with a group. 
+            pre 
+                |  &lt;fb:share-button href="https://szeged-tech-tutorial.herokuapp.com/" layout="button"&gt;&lt;/fb:share-button&gt;
+                
+            <fb:share-button href="https://szeged-tech-tutorial.herokuapp.com/" layout="button"></fb:share-button>
+            
+     div(class="")
+        div(class="well")
+            h2 
+                | Embedded Posts
+            p
+                | Embedded Posts let you add any public post from Facebook to your blog or web site.
+            pre 
+                |  &lt;fb:post href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" width="500"&gt;&lt;/fb:post&gt;
+                
+            <fb:post href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" width="500"></fb:post>
+                
+     div(class="")
+        div(class="well")
+            h2 
+                | Comments
+            p
+                | The Comments plugin lets people comment on any piece of content on your site.
+            pre 
+                |  &lt;fb:comments href="https://szeged-tech-tutorial.herokuapp.com/" numposts="5" colorscheme="light"&gt;&lt;/fb:comments&gt;
+                
+            <fb:comments href="https://szeged-tech-tutorial.herokuapp.com/" numposts="5" colorscheme="light"></fb:comments>
+            s
+     div(class="")
+        div(class="well")
+            h2 
+                | Send Button
+            p
+                | Let people privately send content on your site to their friends
+            pre 
+                |  &lt;fb:send href="https://szeged-tech-tutorial.herokuapp.com/" colorscheme="light"&gt;&lt;/fb:send&gt;
+                
+            <fb:send href="https://szeged-tech-tutorial.herokuapp.com/" colorscheme="light"></fb:send>
+            
+     div(class="")
+        div(class="well")
+            h2 
+                | Follow Button
+            p
+                | Let people subscribe to public updates on Facebook.
+            pre 
+                |  &lt;fb:follow href="https://www.facebook.com/zuck" colorscheme="light" layout="standard" show_faces="true"&gt;&lt;/fb:follow&gt;
+                
+            <fb:follow href="https://www.facebook.com/zuck" colorscheme="light" layout="standard" show_faces="true"></fb:follow>
+                
+     div(class="")
+        div(class="well")
+            h2 
+                | Like Box
+            p
+                | A special version of the Like Button only for Facebook pages.
+            pre 
+                |  &lt;fb:like-box href="https://www.facebook.com/FacebookDevelopers" colorscheme="light" show_faces="true" header="true" stream="false" show_border="true"&gt;&lt;/fb:like-box&gt;
+                
+            <fb:like-box href="https://www.facebook.com/FacebookDevelopers" colorscheme="light" show_faces="true" header="true" stream="false" show_border="true"></fb:like-box>
+            
+     div(class="")
+        div(class="well")
+            h2 
+                | Facepile
+            p
+                | Display the profile photos of the people who have connected with your Facebook page or app.
+            pre 
+                |  &lt;fb:facepile href="https://www.facebook.com/FacebookDevelopers" max_rows="1" colorscheme="light" size="medium" show_count="true"&gt;&lt;/fb:facepile&gt;
+                
+            <fb:facepile href="https://www.facebook.com/FacebookDevelopers" max_rows="1" colorscheme="light" size="medium" show_count="true"></fb:facepile>
+            
+     div(class="")
+        div(class="well")
+            h2 
+                | Activity Feed
+            p
+                | Displays the most interesting, recent activity taking place on your site.
+            pre 
+                |  &lt;fb:activity site="szeged-tech-tutorial.herokuapp.com" action="likes, recommends" colorscheme="light" header="true"&gt;&lt;/fb:activity&gt;
+                
+            <fb:activity site="szeged-tech-tutorial.herokuapp.com" action="likes, recommends" colorscheme="light" header="true"></fb:activity>
+                
+     div(class="")
+        div(class="well")
+            h2 
+                | Recommendations Feedx
+            p
+                | Displays the most recommended content on your site.
+            pre 
+                |  &lt;fb:recommendations site="szeged-tech-tutorial.herokuapp.com" action="likes, recommends" colorscheme="light" header="true"&gt;&lt;/fb:recommendations&gt;
+                
+            <fb:recommendations site="szeged-tech-tutorial.herokuapp.com" action="likes, recommends" colorscheme="light" header="true"></fb:recommendations>

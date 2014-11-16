@@ -1,0 +1,70 @@
+doctype html
+html
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#")
+    title= title
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+    link(rel="icon", href="/images/favicon.ico", type="image/x-icon")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    meta(property="fb:app_id",      content="719490774803646")
+    meta(property="og:type",        content="website")
+    meta(property="og:url",         content="https://szeged-tech-tutorial.herokuapp.com/")
+    meta(property="og:title",       content="Example")
+    meta(property="og:description", content="Simple example on how to integrate social media experiance into a website")
+    meta(property="og:image",       content="https://szeged-tech-tutorial.herokuapp.com/images/tutorial.jpg")
+    block scripts
+  body
+    div(id="fb-root")
+    script
+        |window.fbAsyncInit = function() {
+        |    FB.init({
+        |      appId      : '719490774803646',
+        |      xfbml      : true,
+        |      version    : 'v2.1'
+        |    });
+        |  };
+        |  (function(d, s, id){
+        |     var js, fjs = d.getElementsByTagName(s)[0];
+        |     if (d.getElementById(id)) {return;}
+        |     js = d.createElement(s); js.id = id;
+        |     js.src = "//connect.facebook.net/en_US/sdk.js";
+        |     fjs.parentNode.insertBefore(js, fjs);
+        |   }(document, 'script', 'facebook-jssdk')); 
+    nav(class="navbar navbar-inverse navbar-fixed-top", role="navigation")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+            span(class="sr-only")
+                | Toggle navigation
+            span(class="icon-bar")
+            span(class="icon-bar")
+            span(class="icon-bar")
+          a(class="navbar-brand", href="/")
+            | Tutorial
+        div(id="navbar", class="navbar-collapse collapse")
+            ul(class="nav navbar-nav navbar-right")
+                block top menu
+    div(class="container-fluid")      
+        div(class="row")
+            div(class="col-sm-3 col-md-2 sidebar")
+                ul(class="nav nav-sidebar")
+                    li
+                        a(href="/tutorial")
+                            | Basics
+                    li
+                        a(href="/tutorial/init")
+                            | Init JS SDK
+                    li
+                        a(href="/tutorial/login")
+                            | Login
+                    li
+                        a(href="/tutorial/graph")
+                            | Graph
+                    li
+                        a(href="/tutorial/plugins")
+                            | Plugins
+            div(class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main")
+                block content

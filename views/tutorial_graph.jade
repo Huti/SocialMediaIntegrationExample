@@ -1,0 +1,113 @@
+extends layout
+
+block content
+    div(class="jumbotron")
+        div(class="container")
+            h2
+                | Graph
+            p
+                | The primary way for apps to read and write to the Facebook social graph
+     div(class="")
+        div(class="well")
+            h2 
+                | Simple Api calls
+            p
+                | Graph api calls have the foloowing structure: http://graph.facebook.com/{object-id}?access_token={access_token}. However we can make some calls without access_token.
+            pre 
+                | For example we can call http://graph.facebook.com/4 to get the public profile of Mark Zuckerberg
+            pre 
+                |{
+                |   "id": "4",
+                |   "first_name": "Mark",
+                |   "gender": "male",
+                |   "last_name": "Zuckerberg",
+                |   "link": "https://www.facebook.com/zuck",
+                |   "locale": "en_US",
+                |   "name": "Mark Zuckerberg",
+                |   "username": "zuck"
+                |}
+     div(class="")
+        div(class="well")
+            h2 
+                | SDK
+            p
+                | Useing the js SDK we can make api calls with FB.api(); The function will take care of the access token fo us.
+    div(class="")
+        div(class="well")
+            h2 
+                | Open Graph
+            p
+                | Open Graph lets apps tell stories on Facebook through a structured, strongly typed API.
+                | You can do this by executing actions on objects.
+            h3
+                | Example object: website
+            p   
+                | This object type represents a website.
+            pre
+                |&lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"&gt;
+                |  &lt;meta property="fb:app_id" content="302184056577324" /&gt; 
+                |  &lt;meta property="og:type"   content="website" /&gt; 
+                |  &lt;meta property="og:url"    content="Put your own URL to the object here" /&gt; 
+                |  &lt;meta property="og:title"  content="Sample Website" /&gt; 
+                |  &lt;meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" /&gt;
+            h3
+                | Example action: og.likes
+            p
+                | An action representing someone liking any object.
+            h4
+                | Create
+            pre
+                |/* make the API call */
+                |FB.api(
+                |    "/me/og.likes",
+                |    "POST",
+                |    {
+                |        "object": "http:\/\/samples.ogp.me\/226075010839791"
+                |    },
+                |    function (response) {
+                |      if (response && !response.error) {
+                |        /* handle the result */
+                |      }
+                |    }
+                |);
+            h4
+                | Read
+            pre
+                |/* make the API call */
+                |FB.api(
+                |    "/me/og.likes",
+                |    function (response) {
+                |      if (response && !response.error) {
+                |        /* handle the result */
+                |      }
+                |    }
+                |);
+            h4
+                | Update
+            pre
+                |/* make the API call */
+                |FB.api(
+                |    "/id_from_create_call",
+                |    "POST",
+                |    {
+                |        "object": "http:\/\/samples.ogp.me\/226075010839791"
+                |    },
+                |    function (response) {
+                |      if (response && !response.error) {
+                |        /* handle the result */
+                |      }
+                |    }
+                |);
+            h4
+                | Delete
+            pre
+                |/* make the API call */
+                |FB.api(
+                |    "/id_from_create_call",
+                |    "DELETE",
+                |    function (response) {
+                |      if (response && !response.error) {
+                |        /* handle the result */
+                |      }
+                |    }
+                |);

@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    div(class="jumbotron")
+        div(class="container")
+            h2
+                | Init FB js SDK
+    div(class="")
+        div(class="well")
+            h2 
+                | Simple init
+            pre
+                |    &lt;div id="fb-root"&gt;&lt;/div&gt;
+                |    &lt;script&gt;
+                |       window.fbAsyncInit = function() {
+                |           FB.init({
+                |              appId      : 'your-app-id',  //Application id to identify our calls
+                |              xfbml      : true,           //Turn xfbml parsing on 
+                |              cookie     : true,           //create fbr_ cookie for server session access
+                |              version    : 'v2.1'          //what version is loaded in
+                |            });
+                |          };
+                |    
+                |       (function(d, s, id){
+                |           var js, fjs = d.getElementsByTagName(s)[0];
+                |           if (d.getElementById(id)) {return;}
+                |           js = d.createElement(s); js.id = id;
+                |           js.src = "//connect.facebook.net/en_US/sdk.js";
+                |           fjs.parentNode.insertBefore(js, fjs);
+                |       }(document, 'script', 'facebook-jssdk'));
+                |    &lt;/script&gt;
+    div(class="")
+        div(class="well")
+            h2 
+                | Debugging
+            p
+                | To improve performance, the JavaScript SDK is loaded minified. You can also load a debug version of the JavaScript SDK that includes more logging and stricter argument checking as well as being non-minified. To do so, change the js.src value in your loading code to this:
+            pre
+                | js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+                
+    div(class="")
+        div(class="well")
+            h2 
+                | Localization
+            p
+                | In the basic setup snippet, the en_US version of the SDK is initialized, which means that all of the Facebook-generated buttons and plugins used on your site will be in US English.
+            pre
+                | js.src = "//connect.facebook.net/en_US/sdk.js";
+            p
+                a(href="https://www.facebook.com/translations/FacebookLocales.xml", target="_blank")
+                    | https://www.facebook.com/translations/FacebookLocales.xml
